@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projeto de Acessibilidade</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+            background-color: #fff;
+            color: #111;
+            font-size: 1.2rem;
+        }
+
+        /* Cabeçalho fixo */
+        .header {
+            background: #000;
+            color: #fff;
+            padding: 1.5rem 2.5rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+            font-size: 1.3rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            color: #e60000;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(255,0,0,0.7);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #e60000;
+            text-shadow: 1px 1px 6px rgba(255,0,0,0.9);
+        }
+
+        main {
+            margin-top: 100px;
+        }
+
+        /* Seção inicial */
+        .inicio {
+            background: linear-gradient(to right, #000, #e60000);
+            color: #fff;
+            text-align: center;
+            padding: 7rem 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .inicio h2 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8), 2px 2px 6px #e60000;
+            transition: transform 0.3s;
+        }
+
+        .inicio h2:hover {
+            transform: scale(1.05);
+            color: #ff3333;
+        }
+
+        .inicio p {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            color: #f0f0f0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 2.5rem;
+            padding: 1.2rem 2.5rem;
+            background: #e60000;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 12px rgba(230,0,0,0.7);
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background: #fff;
+            color: #000;
+            transform: scale(1.1);
+            box-shadow: 0 0 18px rgba(255,255,255,0.9);
+        }
+
+        /* Galeria */
+        .galeria {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: #111;
+            color: #fff;
+        }
+
+        .galeria h2 {
+            color: #e60000;
+            margin-bottom: 2.5rem;
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(255,0,0,0.7);
+        }
+
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .grid-galeria img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 3px solid #e60000;
+            box-shadow: 0 4px 12px rgba(255,0,0,0.7);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .grid-galeria img:hover {
+            transform: scale(1.07);
+            box-shadow: 0 6px 20px rgba(255,0,0,0.9);
+        }
+
+        figcaption {
+            margin-top: 0.7rem;
+            font-size: 3rem; /* Aumentado para destaque máximo */
+            font-weight: bold;
+            color: #eee;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            text-align: center;
+        }
+
+        /* Contato */
+        .contato {
+            padding: 5rem 2rem;
+            background: linear-gradient(to right, #e60000, #000);
+            color: #fff;
+        }
+
+        .contato h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 2px 2px 8px #ff3333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
+            gap: 1.2rem;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.4rem;
+            border: 2px solid #e60000;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 12px rgba(230,0,0,0.7);
+        }
+
+        button:hover,
+        button:focus {
+            background: #e60000;
+            color: #fff;
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255,0,0,1);
+        }
+
+        /* Rodapé */
+        .footer {
+            text-align: center;
+            background: #000;
+            color: #fff;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 4px solid #e60000;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(255,0,0,0.8);
+        }
+
+        /* Animação */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Projeto de Acessibilidade</h1>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Início -->
+    <main>
+        <section id="inicio" class="inicio">
+            <div class="intro-text">
+                <h2>Bem-vindo(a)!</h2>
+                <p>Este é um site acessível desenvolvido para demonstrar boas práticas de inclusão digital.</p>
+                <a href="#galeria" class="btn">Conhecer a Galeria</a>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria" class="galeria">
+            <h2>Galeria de Fotos</h2>
+            <div class="grid-galeria">
+                <figure>
+                    <img src="Baco 1.jpg" alt="Cantor se apresentando no palco com camisa vermelha estampada">
+                    <figcaption>Apresentação ao vivo</figcaption>
+                </figure>
+                <figure>
+                    <img src="Baco 2.jpg" alt="Cantor cantando com microfone, usando camisa social branca">
+                    <figcaption>Show emocionante</figcaption>
+                </figure>
+                <figure>
+                    <img src="Baco 3.jpg" alt="Retrato artístico do cantor de perfil, mostrando tatuagem no ombro">
+                    <figcaption>Retrato artístico</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="contato">
+            <h2>Entre em Contato</h2>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>Projeto desenvolvido como exemplo de acessibilidade | 2025</p>
+    </footer>
+</body>
+</html>
