@@ -1,77 +1,118 @@
-<name>Maria Eduarda VIana 2E 21/08/2025</name>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projeto de Acessibilidade</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projeto de Acessibilidade</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header class="header">
-        <nav class="navbar">
-            <h1 class="logo">Projeto de Acessibilidade</h1>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Início -->
-    <main>
-        <section id="inicio" class="inicio">
-            <div class="intro-text">
-                <h2>Bem-vindo(a)!</h2>
-                <p>Este é um site acessível desenvolvido para demonstrar boas práticas de inclusão digital.</p>
-                <a href="#galeria" class="btn">Conhecer a Galeria</a>
-            </div>
-        </section>
+<!-- Cabeçalho -->
+<header class="header">
+<nav class="navbar">
+<h1 class="logo">Projeto de Acessibilidade</h1>
+<ul class="nav-links">
+<li><a href="#inicio">Início</a></li>
+<li><a href="#galeria">Galeria</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+</header>
 
-        <!-- Galeria -->
-        <section id="galeria" class="galeria">
-            <h2>Galeria de Fotos</h2>
-            <div class="grid-galeria">
-                <figure>
-                    <img src="Baco 1.jpg" alt="Cantor se apresentando no palco com camisa vermelha estampada">
-                    <figcaption>Apresentação ao vivo</figcaption>
-                </figure>
-                <figure>
-                    <img src="Baco 2.jpg" alt="Cantor cantando com microfone, usando camisa social branca">
-                    <figcaption>Show emocionante</figcaption>
-                </figure>
-                <figure>
-                    <img src="Baco 3.jpg" alt="Retrato artístico do cantor de perfil, mostrando tatuagem no ombro">
-                    <figcaption>Retrato artístico</figcaption>
-                </figure>
-            </div>
-        </section>
+<!-- Início -->
+<main>
+<section id="inicio" class="inicio">
+<div class="intro-text">
+<h2>Bem-vindo(a)!</h2>
+<p>Este é um site acessível desenvolvido para demonstrar boas práticas de inclusão digital.</p>
+<a href="#galeria" class="btn">Conhecer a Galeria</a>
+</div>
+</section>
 
-        <!-- Contato -->
-        <section id="contato" class="contato">
-            <h2>Entre em Contato</h2>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+<!-- Galeria -->
+<section id="galeria" class="galeria">
+<h2>Galeria de Fotos</h2>
+<div class="grid-galeria">
+<figure>
+<img src="Baco 1.jpg" alt="Cantor se apresentando no palco com camisa vermelha estampada" onclick="openModal(1)">
+<figcaption>Apresentação ao vivo</figcaption>
+</figure>
+<figure>
+<img src="Baco 2.jpg" alt="Cantor cantando com microfone, usando camisa social branca" onclick="openModal(2)">
+<figcaption>Show emocionante</figcaption>
+</figure>
+<figure>
+<img src="Baco 3.jpg" alt="Retrato artístico do cantor de perfil, mostrando tatuagem no ombro" onclick="openModal(3)">
+<figcaption>Retrato artístico</figcaption>
+</figure>
+</div>
+</section>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+<!-- Modais -->
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal(1)">&times;</span>
+<h3>Infância</h3>
+<p>Diogo Álvaro Ferreira Moncorvo, mais conhecido como Baco Exu do Blues, nasceu dia 11 de janeiro de 1996 em Salvador. Foi a morte precoce do pai, aos 7 anos, que o levou a um caminho de rebeldia que seria a base de sua música.</p>
+</div>
+</div>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+<div id="modal2" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal(2)">&times;</span>
+<h3>Literatura e Educação</h3>
+<p>Desde cedo a arte surgiu como uma válvula de escape. Apaixonado por literatura, devorou obras de Jorge Amado e Dostoiévski, enquanto lidava com o peso de ser o único aluno negro das escolas particulares onde estudava como bolsista.</p>
+</div>
+</div>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+<div id="modal3" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal(3)">&times;</span>
+<h3>Início na Música</h3>
+<p>Aos 16 anos, encantado pela cena do rap brasileiro, Baco abandonou os estudos e se dedicou integralmente à música. O sucesso profissional começou a surgir, mas ainda não refletia sua vida pessoal.</p>
+</div>
+</div>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <p>Projeto desenvolvido como exemplo de acessibilidade | 2025</p>
-    </footer>
+<div id="modal4" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal(4)">&times;</span>
+<h3>Vida Pessoal e Sucesso</h3>
+<p>Solteiro, ele desconversa sobre sua sexualidade e diz “não saber” se é hétero, bi ou gay. Com mais de 1,5 milhão de seguidores, coleciona elogios, sobretudo após eliminar mais de 46 kg com malhação e dieta. Mesmo assim, não nega o assombro com o assédio. “Foram 25 anos pra eu me achar lindo”, canta em seu álbum mais recente. Fonte: Site Letra.</p>
+</div>
+</div>
+
+<!-- Contato -->
+<section id="contato" class="contato">
+<h2>Entre em Contato</h2>
+<form>
+<label for="nome">Nome:</label>
+<input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+<label for="email">E-mail:</label>
+<input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+<label for="mensagem">Mensagem:</label>
+<textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+
+<button type="submit">Enviar</button>
+</form>
+</section>
+
+<!-- Rodapé -->
+<footer class="footer">
+<p>Projeto desenvolvido por Maria Eduarda Viana | 2025</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+function openModal(num){ document.getElementById("modal"+num).style.display="block"; }
+function closeModal(num){ document.getElementById("modal"+num).style.display="none"; }
+window.onclick = function(event){
+for(let i=1;i<=4;i++){ let modal = document.getElementById("modal"+i); if(event.target == modal){ modal.style.display = "none"; } }
+}
+</script>
+
 </body>
 </html>
-
 
